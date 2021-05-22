@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.hackmate.Fragments.HomeFragment;
 import com.example.hackmate.Fragments.MyTeamsFragment;
@@ -32,11 +33,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottom_nav_bar);
+        bottomNavigationView.setVisibility(View.VISIBLE);
         bottomNavigation();
 
     }
 
     private void bottomNavigation() {
+        bottomNavigationView.setVisibility(View.VISIBLE);
+
         getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,homeFragment).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,teamsFragment).hide(teamsFragment).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,myTeamsFragment).hide(myTeamsFragment).commit();

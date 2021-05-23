@@ -14,26 +14,40 @@ import android.widget.Toast;
 
 import com.example.hackmate.R;
 
-public class ParticipantProfileFragment extends Fragment {
+public class InviteParticipantFragment extends Fragment {
 
-    Button inviteParticipant;
+    Button sendInvite, goProfile;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_participant_profile, container, false);
+        return inflater.inflate(R.layout.fragment_invite_participant, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        inviteParticipant = view.findViewById(R.id.sendInviteParticipant);
-        inviteParticipant.setOnClickListener(new View.OnClickListener() {
+        sendInvite = view.findViewById(R.id.sendInviteButton);
+        goProfile = view.findViewById(R.id.participantProfileButton);
+
+        sendInvite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Invite sent successfully !!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        goProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.nav_host_fragment,new ParticipantProfileFragment())
+                        .addToBackStack(null)
+                        .commit();
+
             }
         });
     }

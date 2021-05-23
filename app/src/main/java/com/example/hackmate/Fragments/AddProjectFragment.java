@@ -13,30 +13,38 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.hackmate.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-public class CreateTeamsFragment extends Fragment {
+public class AddProjectFragment extends Fragment {
 
-    Button createTeam;
+    Button submitProject;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_teams, container, false);
+        return inflater.inflate(R.layout.fragment_add_project, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        createTeam = view.findViewById(R.id.createTeamButtonFilter);
-
-        createTeam.setOnClickListener(new View.OnClickListener() {
+        submitProject = view.findViewById(R.id.submitProject);
+        submitProject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Your team has been created successfully !!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Project has been added successfully !!!", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
+        bottomNavigationView.setVisibility(View.VISIBLE);
     }
 }

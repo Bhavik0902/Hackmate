@@ -3,22 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.ParticipantProfileFragment">
+    tools:context=".Fragments.DeleteFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:layout_marginBottom="100dp"
-        android:text="Participant Profile Fragment" />
+        android:textSize="20dp"
+        android:gravity="center|top"
+        android:layout_marginTop="50dp"
+        android:text="Delete Account Fragment" />
 
     <Button
-        android:id="@+id/sendInviteParticipant"
+        android:id="@+id/DeleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send Invite"
+        android:text="Delete Account"
         android:layout_gravity="center"/>
-
 </FrameLayout>

@@ -16,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MyTeamsFragment extends Fragment {
 
-    Button particularTeam;
+    Button particularTeam, tallyRequest;
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -31,6 +31,7 @@ public class MyTeamsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         particularTeam = view.findViewById(R.id.particularTeamButton);
+        tallyRequest = view.findViewById(R.id.requestTally);
         bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
 
         particularTeam.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +42,19 @@ public class MyTeamsFragment extends Fragment {
                 getFragmentManager()
                         .beginTransaction()
                         .replace(R.id.nav_host_fragment,new ParticularTeamFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
+        tallyRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomNavigationView.setVisibility(View.GONE);
+
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.nav_host_fragment,new RequestTallyFragment())
                         .addToBackStack(null)
                         .commit();
             }

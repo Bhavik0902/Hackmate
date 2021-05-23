@@ -15,27 +15,26 @@ import android.widget.Toast;
 import com.example.hackmate.R;
 
 
-public class CreateTeamsFragment extends Fragment {
+public class DeleteFragment extends Fragment {
 
-    Button createTeam;
+    Button deleteButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_teams, container, false);
+        return inflater.inflate(R.layout.fragment_delete, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        createTeam = view.findViewById(R.id.createTeamButtonFilter);
-
-        createTeam.setOnClickListener(new View.OnClickListener() {
+        deleteButton = view.findViewById(R.id.DeleteButton);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Your team has been created successfully !!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Account has been deleted successfully !!", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.hackmate.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HackInfoFragment extends Fragment {
 
-    Button joinTeam, createTeam;
+    Button joinTeam, createTeam, viewWebsite, participateNow, addFromExisting;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,15 +38,40 @@ public class HackInfoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        joinTeam = view.findViewById(R.id.joinTeam);
+        addFromExisting = view.findViewById(R.id.addFrommExisting);
         createTeam = view.findViewById(R.id.createTeam);
+        viewWebsite = view.findViewById(R.id.viewWebsite);
+        participateNow = view.findViewById(R.id.participateNow);
+        joinTeam = view.findViewById(R.id.joinTeam);
+
+        viewWebsite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "You will be directed to the hack website", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        participateNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Following three buttons will be shown in dialog box !!!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         joinTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getActivity(), "Team code will be asked through dialog box..", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        addFromExisting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 getFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.nav_host_fragment,new JoinTeamsFragment())
+                        .replace(R.id.nav_host_fragment,new AddFromExistingFragment())
                         .addToBackStack(null)
                         .commit();
             }

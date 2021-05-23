@@ -3,31 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.ParticularTeamFragment">
+    tools:context=".Fragments.JoinTeamsFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PARTICULAR TEAM FRAGMENT"
+        android:text="Join Teams Fragment"
         android:textSize="20sp"
         android:layout_marginTop="50dp"
         android:layout_gravity="top|center"/>
 
     <Button
-        android:id="@+id/particularTeamDetailsButton"
+        android:id="@+id/joinTeamButtonFilter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PARTICULAR TEAM DETAILS"
-        android:layout_gravity="center|top"
-        android:layout_marginTop="150dp"/>
-
-    <Button
-        android:id="@+id/profileParticipantButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GO TO PROFILE"
-        android:layout_gravity="center|top"
-        android:layout_marginTop="200dp"/>
+        android:text="SHOW RESULTS"
+        android:layout_gravity="center"/>
 
 </FrameLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.ParticularTeamFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PARTICULAR TEAM FRAGMENT"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="top|center"/>
+
+    <Button
+        android:id="@+id/TeamDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="top|center"
+        android:text="particular team details" />
+    <Button
+        android:id="@+id/GoToProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:layout_gravity="top|center"
+        android:text="Go To Profile" />
+
+</FrameLayout>

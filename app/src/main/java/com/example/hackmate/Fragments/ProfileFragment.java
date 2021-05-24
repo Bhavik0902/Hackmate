@@ -15,11 +15,12 @@ import android.widget.Toast;
 
 import com.example.hackmate.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class ProfileFragment extends Fragment {
 
     Button addProjectButton,settingsButton, editProfileButton;
-    BottomNavigationView bottomNavigationView;
+    ChipNavigationBar bottomNavigation;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,12 +36,12 @@ public class ProfileFragment extends Fragment {
         addProjectButton = view.findViewById(R.id.addProject);
         settingsButton = view.findViewById(R.id.settingsButton);
         editProfileButton = view.findViewById(R.id.editProfileButton);
-        bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
+        bottomNavigation = getActivity().findViewById(R.id.bottom_nav_bar);
 
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bottomNavigationView.setVisibility(View.GONE);
+                bottomNavigation.setVisibility(View.GONE);
 
                 getFragmentManager()
                         .beginTransaction()
@@ -60,7 +61,7 @@ public class ProfileFragment extends Fragment {
                 bundle.putInt("Key", 1);
                 frag.setArguments(bundle);
 
-                bottomNavigationView.setVisibility(View.GONE);
+                bottomNavigation.setVisibility(View.GONE);
 
                 getFragmentManager()
                         .beginTransaction()
@@ -74,7 +75,7 @@ public class ProfileFragment extends Fragment {
         editProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bottomNavigationView.setVisibility(View.GONE);
+                bottomNavigation.setVisibility(View.GONE);
 
                 getFragmentManager()
                         .beginTransaction()

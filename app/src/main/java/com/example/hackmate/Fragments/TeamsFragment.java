@@ -14,12 +14,14 @@ import android.widget.Toast;
 
 import com.example.hackmate.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.chip.Chip;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 
 public class TeamsFragment extends Fragment {
 
     Button joinTeamDetails, joinCode;
-    BottomNavigationView bottomNavigationView;
+    ChipNavigationBar bottomNavigation;
     int GET_NAV_CODE = 0;
 
     @Override
@@ -40,7 +42,7 @@ public class TeamsFragment extends Fragment {
 
         joinTeamDetails = view.findViewById(R.id.joinTeamDetails);
         joinCode = view.findViewById(R.id.joinUsingCode);
-        bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
+        bottomNavigation = getActivity().findViewById(R.id.bottom_nav_bar);
 
         joinCode.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +61,7 @@ public class TeamsFragment extends Fragment {
                     bundle.putInt("Key", 1);
                     frag.setArguments(bundle);
                 }
-                bottomNavigationView.setVisibility(View.GONE);
+                bottomNavigation.setVisibility(View.GONE);
 
                 getFragmentManager()
                         .beginTransaction()

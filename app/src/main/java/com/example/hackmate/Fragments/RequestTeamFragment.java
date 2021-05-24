@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.hackmate.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 
 public class RequestTeamFragment extends Fragment {
@@ -63,8 +64,8 @@ public class RequestTeamFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         if(GET_NAV_CODE!=1) {
-            BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
-            bottomNavigationView.setVisibility(View.VISIBLE);
+            ChipNavigationBar bottomNavigation = getActivity().findViewById(R.id.bottom_nav_bar);
+            bottomNavigation.setVisibility(View.VISIBLE);
         }
     }
 }

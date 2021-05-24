@@ -14,10 +14,12 @@ import com.example.hackmate.Fragments.MyTeamsFragment;
 import com.example.hackmate.Fragments.ProfileFragment;
 import com.example.hackmate.Fragments.TeamsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.chip.Chip;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView bottomNavigationView;
+    private ChipNavigationBar bottomNavigation;
 
     //Fragments
     private Fragment activeFragment;
@@ -32,14 +34,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomNavigationView = findViewById(R.id.bottom_nav_bar);
-        bottomNavigationView.setVisibility(View.VISIBLE);
+        bottomNavigation = findViewById(R.id.bottom_nav_bar);
+        bottomNavigation.setVisibility(View.VISIBLE);
         bottomNavigation();
 
     }
 
     private void bottomNavigation() {
-        bottomNavigationView.setVisibility(View.VISIBLE);
+        bottomNavigation.setVisibility(View.VISIBLE);
 
         getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,homeFragment).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,teamsFragment).hide(teamsFragment).commit();
@@ -47,15 +49,15 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,profileFragment).hide(profileFragment).commit();
 
         activeFragment = homeFragment;
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigation.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+            public void onItemSelected(int i) {
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
                         Fragment selectedFragment = homeFragment;
-                        switch (item.getItemId()) {
+                        switch (i)
+                        {
                             case R.id.nav_home:
                                 selectedFragment = homeFragment;
                                 break;
@@ -79,8 +81,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
-
-                return true;
             }
         });
 

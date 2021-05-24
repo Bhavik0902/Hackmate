@@ -38,7 +38,8 @@
         android:layout_height="wrap_content"
         android:text="CREATE TEAM"
         android:textSize="18dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="top|center"
+        android:layout_marginTop="350dp"/>
     <Button
         android:id="@+id/addFrommExisting"
         android:layout_width="wrap_content"
@@ -53,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
-        android:layout_marginTop="295dp"
+        android:layout_marginTop="300dp"
         android:text="JOIN TEAM"
         android:textSize="18dp" />
 

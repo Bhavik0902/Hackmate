@@ -13,12 +13,13 @@ import android.widget.Button;
 
 import com.example.hackmate.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 
 public class HomeFragment extends Fragment {
 
    Button hackInfo;
-   BottomNavigationView bottomNavigationView;
+   ChipNavigationBar bottomNavigation;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,12 +33,12 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         hackInfo = view.findViewById(R.id.hackInfoClick);
-        bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
+        bottomNavigation = getActivity().findViewById(R.id.bottom_nav_bar);
 
         hackInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bottomNavigationView.setVisibility(View.GONE);
+                bottomNavigation.setVisibility(View.GONE);
 
                 getFragmentManager()
                         .beginTransaction()

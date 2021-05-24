@@ -13,11 +13,12 @@ import android.widget.Button;
 
 import com.example.hackmate.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class MyTeamsFragment extends Fragment {
 
     Button particularTeam, tallyRequest;
-    BottomNavigationView bottomNavigationView;
+    ChipNavigationBar bottomNavigation;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,12 +33,12 @@ public class MyTeamsFragment extends Fragment {
 
         particularTeam = view.findViewById(R.id.particularTeamButton);
         tallyRequest = view.findViewById(R.id.requestTally);
-        bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
+        bottomNavigation = getActivity().findViewById(R.id.bottom_nav_bar);
 
         particularTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bottomNavigationView.setVisibility(View.GONE);
+                bottomNavigation.setVisibility(View.GONE);
 
                 getFragmentManager()
                         .beginTransaction()
@@ -50,7 +51,7 @@ public class MyTeamsFragment extends Fragment {
         tallyRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bottomNavigationView.setVisibility(View.GONE);
+                bottomNavigation.setVisibility(View.GONE);
 
                 getFragmentManager()
                         .beginTransaction()

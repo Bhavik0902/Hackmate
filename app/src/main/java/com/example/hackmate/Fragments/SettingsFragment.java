@@ -55,7 +55,7 @@ public class SettingsFragment extends Fragment {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "To be added by Arsal !!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Reset Link will be sent to your registered email ID !!", Toast.LENGTH_SHORT).show();
             }
         });
     }

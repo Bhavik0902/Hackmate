@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileFragment extends Fragment {
 
-    Button addProjectButton,settingsButton;
+    Button addProjectButton,settingsButton, editProfileButton;
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -33,6 +34,7 @@ public class ProfileFragment extends Fragment {
 
         addProjectButton = view.findViewById(R.id.addProject);
         settingsButton = view.findViewById(R.id.settingsButton);
+        editProfileButton = view.findViewById(R.id.editProfileButton);
         bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
 
         settingsButton.setOnClickListener(new View.OnClickListener() {
@@ -51,15 +53,37 @@ public class ProfileFragment extends Fragment {
         addProjectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                AddProjectFragment frag = new AddProjectFragment();
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("Key", 1);
+                frag.setArguments(bundle);
+
                 bottomNavigationView.setVisibility(View.GONE);
 
                 getFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.nav_host_fragment,new AddProjectFragment())
+                        .replace(R.id.nav_host_fragment,frag)
                         .addToBackStack(null)
                         .commit();
 
             }
         });
+
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomNavigationView.setVisibility(View.GONE);
+
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.nav_host_fragment,new EditProfileFragment())
+                        .addToBackStack(null)
+                        .commit();
+
+            }
+        });
+
     }
 }

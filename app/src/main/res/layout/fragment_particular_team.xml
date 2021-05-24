@@ -46,5 +46,13 @@
         android:layout_marginBottom="200dp"
         android:text="Add a Project"/>
 
+    <Button
+        android:id="@+id/editProjectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Project"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="100sp"/>
+
 
 </FrameLayout>

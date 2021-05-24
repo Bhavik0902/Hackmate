@@ -3,23 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.ParticipantProfileFragment">
+    tools:context=".Fragments.EditProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:layout_marginBottom="100dp"
-        android:text="Participant Profile Fragment" />
-
-    <Button
-        android:id="@+id/sendInviteParticipant"
-        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send Invite"
-        android:layout_gravity="center"/>
+        android:text="EDIT PROFILE FRAGMENT"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="top|center"/>
+
+    <Button
+        android:id="@+id/saveChangeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE CHANGES"
+        android:layout_marginTop="300sp"
+        android:layout_gravity="center|top"/>
 
 </FrameLayout>

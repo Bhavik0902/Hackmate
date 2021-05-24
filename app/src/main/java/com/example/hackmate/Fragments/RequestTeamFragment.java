@@ -16,17 +16,16 @@ import com.example.hackmate.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-public class TeamsFragment extends Fragment {
+public class RequestTeamFragment extends Fragment {
 
-    Button joinTeamDetails, joinCode;
-    BottomNavigationView bottomNavigationView;
+    Button requestJoin, viewMemberProfile;
     int GET_NAV_CODE = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_teams, container, false);
+        return inflater.inflate(R.layout.fragment_request_team, container, false);
     }
 
     @Override
@@ -38,36 +37,34 @@ public class TeamsFragment extends Fragment {
             GET_NAV_CODE = bundle.getInt("Key", 0);
         }
 
-        joinTeamDetails = view.findViewById(R.id.joinTeamDetails);
-        joinCode = view.findViewById(R.id.joinUsingCode);
-        bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
+        requestJoin = view.findViewById(R.id.requestJoinTeam);
+        viewMemberProfile = view.findViewById(R.id.viewMemberProfile);
 
-        joinCode.setOnClickListener(new View.OnClickListener() {
+        requestJoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Code will be asked though dialog box", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Request Sent !!", Toast.LENGTH_SHORT).show();
             }
         });
 
-        joinTeamDetails.setOnClickListener(new View.OnClickListener() {
+        viewMemberProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RequestTeamFragment frag = new RequestTeamFragment();
-
-                if(GET_NAV_CODE==1) {
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("Key", 1);
-                    frag.setArguments(bundle);
-                }
-                bottomNavigationView.setVisibility(View.GONE);
-
                 getFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.nav_host_fragment,frag)
+                        .replace(R.id.nav_host_fragment,new ParticipantProfileFragment())
                         .addToBackStack(null)
                         .commit();
             }
         });
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(GET_NAV_CODE!=1) {
+            BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
+            bottomNavigationView.setVisibility(View.VISIBLE);
+        }
     }
 }

@@ -28,13 +28,6 @@ public class HackInfoFragment extends Fragment {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
-        BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
-        bottomNavigationView.setVisibility(View.VISIBLE);
-    }
-
-    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -61,7 +54,18 @@ public class HackInfoFragment extends Fragment {
         joinTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Team code will be asked through dialog box..", Toast.LENGTH_SHORT).show();
+                TeamsFragment frag = new TeamsFragment();
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("Key", 1);
+                frag.setArguments(bundle);
+
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.nav_host_fragment,frag)
+                        .addToBackStack(null)
+                        .commit();
+
             }
         });
 
@@ -87,5 +91,12 @@ public class HackInfoFragment extends Fragment {
                         .commit();
             }
         });
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_nav_bar);
+        bottomNavigationView.setVisibility(View.VISIBLE);
     }
 }

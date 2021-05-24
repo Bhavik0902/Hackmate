@@ -17,7 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ParticularTeamFragment extends Fragment {
 
-    Button inviteTeammate, profileParticipant,addProjectTeam;
+    Button inviteTeammate, profileParticipant,addProjectTeam, editProject;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +33,7 @@ public class ParticularTeamFragment extends Fragment {
         inviteTeammate = view.findViewById(R.id.inviteTeammateButton);
         profileParticipant = view.findViewById(R.id.profileParticipantButton);
         addProjectTeam = view.findViewById(R.id.addProjectTeam);
+        editProject = view.findViewById(R.id.editProjectButton);
 
         inviteTeammate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +64,17 @@ public class ParticularTeamFragment extends Fragment {
                 getFragmentManager()
                         .beginTransaction()
                         .replace(R.id.nav_host_fragment,new AddProjectFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
+        editProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.nav_host_fragment,new EditProjectFragment())
                         .addToBackStack(null)
                         .commit();
             }

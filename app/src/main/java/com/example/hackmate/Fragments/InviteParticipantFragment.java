@@ -42,9 +42,15 @@ public class InviteParticipantFragment extends Fragment {
         goProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ParticipantProfileFragment frag = new ParticipantProfileFragment();
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("Key", 1);
+                frag.setArguments(bundle);
+
                 getFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.nav_host_fragment,new ParticipantProfileFragment())
+                        .replace(R.id.nav_host_fragment,frag)
                         .addToBackStack(null)
                         .commit();
 

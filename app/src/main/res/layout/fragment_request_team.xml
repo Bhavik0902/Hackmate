@@ -3,39 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.ProfileFragment">
+    tools:context=".Fragments.RequestTeamFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PROFILE FRAGMENT"
+        android:text="REQUEST TEAM FRAGMENT"
         android:textSize="20sp"
         android:layout_marginTop="50dp"
         android:layout_gravity="top|center"/>
 
     <Button
-        android:id="@+id/settingsButton"
+        android:id="@+id/requestJoinTeam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
-        android:layout_marginTop="100sp"
+        android:text="REQUEST TO JOIN"
+        android:layout_marginTop="300sp"
         android:layout_gravity="center|top"/>
 
     <Button
-        android:id="@+id/editProfileButton"
+        android:id="@+id/viewMemberProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit Profile"
-        android:layout_marginTop="200dp"
+        android:text="View Member Profile"
+        android:layout_marginTop="200sp"
         android:layout_gravity="center|top"/>
-
-    <Button
-        android:id="@+id/addProject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Add a Project"/>
-
 
 </FrameLayout>

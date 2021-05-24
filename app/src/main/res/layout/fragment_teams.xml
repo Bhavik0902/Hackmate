@@ -14,5 +14,21 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="top|center"/>
 
+    <Button
+        android:id="@+id/joinTeamDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Join Team Details"/>
+
+    <Button
+        android:id="@+id/joinUsingCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_gravity="center|top"
+        android:text="Join Using Code"/>
+
+
 
 </FrameLayout>
